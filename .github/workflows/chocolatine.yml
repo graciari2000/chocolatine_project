@@ -4,7 +4,7 @@ branches: -'**' -'!ga-ignore-*'
 jobs: 
   env:
     MIRROR_URL: B-**
-    EXECUTABLES: []
+    EXECUTABLES: "binary"
 
     runs-on: ubuntu-latest
   job-1:
