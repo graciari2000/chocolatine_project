@@ -12,7 +12,7 @@ jobs:
     runs-on: epitechcontent/epitest-docker
     steps: 
       -uses: actions/checkout@v3 pixta-dev/repository-mirroring-action
-      -run: | UNWANTED=$(find . "#*", "*#", "*~", "pain_au_chocolat*", ".a", ".o", ".so", ".gcno", ".gcda", ".gcov", "tmp/", "/tmp")
+      -run: | UNWANTED=$(find . "#*" -or "*#" -or "*~" -or "pain_au_chocolat*" -or ".a" -or ".o" -or ".so" -or ".gcno" -or ".gcda" -or ".gcov" -or "tmp/" -or "/tmp")
       for FILES in $UNWANTED;
       do 
       echo "::error file=${FILES#./}, title=Unwanted file detected::${FILES#./}"
