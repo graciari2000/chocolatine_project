@@ -3,7 +3,7 @@ on: [push, pull_request]
 branches: -'**' -'!ga-ignore-*'
 jobs: 
   env:
-    MIRROR_URL: B-**
+    MIRROR_URL: "git@github.com:EPITECHPROMO2026/B-**"
     EXECUTABLES: "binary"
 
     runs-on: ubuntu-latest
