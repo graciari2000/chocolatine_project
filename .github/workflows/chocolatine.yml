@@ -1,0 +1,35 @@
+name: chocolatine
+on: [push, pull_request] 
+branches: -'**' -'!ga-ignore-*'
+jobs: 
+  env:
+    MIRROR_URL: B-**
+    EXECUTABLES: []
+
+    runs-on: ubuntu-latest
+  job-1:
+    name: check_repository_cleanliness
+    runs-on: epitechcontent/epitest-docker
+    steps: 
+      -uses: actions/checkout@v3 pixta-dev/repository-mirroring-action
+      
+
+    job-2: 
+      needs: job-1
+      name: check_program_compilation
+      runs-on: epitechcontent/epitest-docker
+      steps:
+        -uses: actions/checkout@v3
+        -run: make
+        -run: make clean 
+        -run:
+    
+    job-3:
+      needs: [job-1, job-2]
+      name: run_tests
+      steps:
+        -uses: actions/checkout@v3
+
+    job-4:
+      needs: [job-1, job-2, job-3, job-4]    
+      name: push_to_mirror
