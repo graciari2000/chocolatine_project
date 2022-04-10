@@ -3,7 +3,7 @@ on: [push, pull_request]
 branches: -'**' -'!ga-ignore-*'
 jobs: 
   env:
-    MIRROR_URL: "git@github.com:EPITECHPROMO2026/B-**"
+    MIRROR_URL: "git@github.com:EpitechPromo2026/B-DOP-200-COT-2-1-chocolatine-ariane-gracia.akakpo.git"
     EXECUTABLES: "binary"
 
     runs-on: ubuntu-latest
